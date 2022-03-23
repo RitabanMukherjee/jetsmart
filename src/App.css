@@ -1,39 +1,145 @@
-.App {
+/* HomePage general CSS */
+
+.main-page{
+  height: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+/* HomePage CSS for all elements except the NavBar */
+
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  background-color: #003559;
+  row-gap: 5rem;
+  column-gap: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+.gap-div-2{
+  height: 2vh;
+}
+
+/* CSS for NavBar */
+
+.navbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  height: 10vh;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.2s linear;
+  position: relative;
+  /* margin-left: 20vw; */
+  margin-right: 22vw;
+}
+
+.link:hover{
+  font-size: 2rem;
+}
+
+/* CSS for each Card */
+
+.jet-div{
+  height: 100%;
+  width: 30vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 10px 10px 5px white;
+}
+
+.frame{
+  width: 95%;
+  height: 45vh;
+}
+
+/* Cart Component CSS */
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #003559;
+  color: white;
+  min-height: 70vh;
+}
+
+.button-div{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-div{
+  width: 5vw;
+}
+
+.btn{
+  max-width: 30vw;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  font-size: 1rem;
+  transition: all 0.2s linear;
+}
+
+.btn:hover{
+  background-color: #003559;
+  color: white;
+}
+
+.cart-card{
+  height: 100%;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 2px 2px 2px white;
+}
+
+.cart-footer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* CSS for Mobile Optimization */
+
+@media screen and (max-width: 700px){
+  .App{
+    flex-direction: column;
   }
-  50% {
-    transform: translateY(10px);
+  .jet-div{
+    height: 100%;
+  width: 80vw;
   }
-  100% {
-    transform: translateY(0px);
+  img{
+    height: 70vh;
+  width: 70vw;
+  }
+  .button-div{
+    flex-direction: column;
+  }
+  .gap-div{
+    height: 5vw;
   }
 }

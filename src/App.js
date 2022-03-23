@@ -1,56 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import Jets from './components/Jets';
+import Cart from './components/Cart';
+import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
+import {AiOutlineShoppingCart} from 'react-icons/ai';
+import {useSelector} from 'react-redux';
 
 function App() {
+  const itemCount = useSelector((state) => state.itemCounter.value);
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <BrowserRouter>
+      <nav className='navbar'>
+        <Link to="/" className='link'>JetSmart</Link>
+        <Link to="/cart" className='link'><AiOutlineShoppingCart /> {itemCount}</Link>
+      </nav>
+       <Routes>
+         <Route path="/" element={<Jets />} />
+         <Route path="/cart" element={<Cart />} />
+       </Routes>
+       </BrowserRouter>
     </div>
   );
 }
